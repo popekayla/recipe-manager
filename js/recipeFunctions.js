@@ -1,118 +1,82 @@
-function onLoad() {
-    
-   /*Chili Functions*/
-    document.querySelector("#hideChiliIngredients").addEventListener("click", function() {
-        if(document.querySelector("#chiliIngredients").classList.contains("invisible")) {
-            document.querySelector("#chiliIngredients").classList.remove("invisible");
-            document.querySelector("#chiliIngredients").classList.add("visible");
-        } else {
-            document.querySelector("#chiliIngredients").classList.add("invisible");
-            document.querySelector("#chiliIngredients").classList.remove("visible");
-        }
-    });
-    
-    document.querySelector("#hideChiliInstructions").addEventListener("click", function() {
-        if(document.querySelector("#chiliInstructions").classList.contains("invisible")) {
-            document.querySelector("#chiliInstructions").classList.remove("invisible");
-            document.querySelector("#chiliInstructions").classList.add("visible");
-        } else {
-            document.querySelector("#chiliInstructions").classList.add("invisible");
-            document.querySelector("#chiliInstructions").classList.remove("visible");
-        }
-    });
-    
-    var chiliIngredients = document.chiliServingsForm.chiliServings;
-    var prevMult = 1;
-    for(i=0; i<chiliIngredients.length; i++) {
-       chiliIngredients[i].addEventListener("change", function() {
-           let newMult = parseFloat(document.chiliServingsForm.chiliServings.value);
-           let multiplier = newMult / prevMult;
-           prevMult = newMult;
+/*Get JSON object from local storage*/
+var newRecipeObject = localStorage.getItem("newRecipesJson");
+var recipesJson = localStorage.getItem("recipesJson");
+if (newRecipeObject) {
+    var recipes = JSON.parse(newRecipeObject);
+} else {
+    var recipes = JSON.parse(recipesJson);
+}
 
-           let spanAmounts = document.querySelectorAll("#chiliAmounts span");
-           
+function recipeFunctions() {
 
-           for(i=0; i<spanAmounts.length; i++) {
-               spanAmounts[i].innerHTML = spanAmounts[i].innerHTML * multiplier;
-           };
-        });
-    }
+    /*Show/Hide Ingredients*/
+
+    var ingredientButtons = document.querySelectorAll(".ingredients")
     
-    /*French Toast Functions*/
-    
-    document.querySelector("#hideFrenchToastIngredients").addEventListener("click", function() {
-        if(document.querySelector("#frenchToastIngredients").classList.contains("invisible")) {
-            document.querySelector("#frenchToastIngredients").classList.remove("invisible");
-            document.querySelector("#frenchToastIngredients").classList.add("visible");
-        } else {
-            document.querySelector("#frenchToastIngredients").classList.add("invisible");
-            document.querySelector("#frenchToastIngredients").classList.remove("visible");
-        }
-    });
-    
-    document.querySelector("#hideFrenchToastInstructions").addEventListener("click", function() {
-         if(document.querySelector("#frenchToastInstructions").classList.contains("invisible")) {
-            document.querySelector("#frenchToastInstructions").classList.remove("invisible");
-            document.querySelector("#frenchToastInstructions").classList.add("visible");
-        } else {
-            document.querySelector("#frenchToastInstructions").classList.add("invisible");
-            document.querySelector("#frenchToastInstructions").classList.remove("visible");
-        }
+    for(ingredientButton of ingredientButtons) {
+        ingredientButton.addEventListener("click", function() {
+            let ingredientId = event.target.id;
+           let ingredientName =ingredientId + 'list';
         
-    });
-    
-    var frenchToastIngredients = document.frenchToastServingsForm.frenchToastServings;
-    var prevMult = 1;
-    for(i=0; i<frenchToastIngredients.length; i++) {
-       frenchToastIngredients[i].addEventListener("change", function() {
-           let newMult = parseFloat(document.frenchToastServingsForm.frenchToastServings.value);
-           let multiplier = newMult / prevMult;
-           prevMult = newMult;
-
-           let spanAmounts = document.querySelectorAll("#frenchToastAmounts span");
-
-           for(i=0; i<spanAmounts.length; i++) {
-               spanAmounts[i].innerHTML = spanAmounts[i].innerHTML * multiplier;
-           };
+           if(document.querySelector(ingredientName).classList.contains("invisible")) {
+            document.querySelector(ingredientName).classList.remove("invisible");
+            document.querySelector(ingredientName).classList.add("visible");
+        } else {
+            document.querySelector(ingredientName).classList.add("invisible");
+            document.querySelector(ingredientName).classList.remove("visible");
+        };
         });
     };
+
+    /*Show/Hide Instructions*/
+
+    var instructionButtons = document.querySelectorAll(".instructions")
     
-    /*Salsa Functions*/
-        document.querySelector("#hideSalsaIngredients").addEventListener("click", function() {
-         if(document.querySelector("#salsaIngredients").classList.contains("invisible")) {
-            document.querySelector("#salsaIngredients").classList.remove("invisible");
-            document.querySelector("#salsaIngredients").classList.add("visible");
-        } else {
-            document.querySelector("#salsaIngredients").classList.add("invisible");
-            document.querySelector("#salsaIngredients").classList.remove("visible");
-        }
-    });
-    
-    document.querySelector("#hideSalsaInstructions").addEventListener("click", function() {
-         if(document.querySelector("#salsaInstructions").classList.contains("invisible")) {
-            document.querySelector("#salsaInstructions").classList.remove("invisible");
-            document.querySelector("#salsaInstructions").classList.add("visible");
-        } else {
-            document.querySelector("#salsaInstructions").classList.add("invisible");
-            document.querySelector("#salsaInstructions").classList.remove("visible");
-        }
+    for(instructionButton of instructionButtons) {
+        instructionButton.addEventListener("click", function() {
+            let instructionId = event.target.id;
+           let instructionName =instructionId + 'list';
         
-    });
-    
-    var salsaIngredients = document.salsaServingsForm.salsaServings;
-    var prevMult = 1;
-    for(i=0; i<salsaIngredients.length; i++) {
-       salsaIngredients[i].addEventListener("change", function() {
-           let newMult = parseFloat(document.salsaServingsForm.salsaServings.value);
-           let multiplier = newMult / prevMult;
-           prevMult = newMult;
-
-           let spanAmounts = document.querySelectorAll("#salsaAmounts span");
-           
-
-           for(i=0; i<spanAmounts.length; i++) {
-               spanAmounts[i].innerHTML = spanAmounts[i].innerHTML * multiplier;
-           };
+           if(document.querySelector(instructionName).classList.contains("invisible")) {
+            document.querySelector(instructionName).classList.remove("invisible");
+            document.querySelector(instructionName).classList.add("visible");
+        } else {
+            document.querySelector(instructionName).classList.add("invisible");
+            document.querySelector(instructionName).classList.remove("visible");
+        };
         });
-    }
+    };
+
+    /*Edit Serving Size*/
+    
+     var inputs = document.querySelectorAll("input[type=number");
+     var servings = document.querySelectorAll(".servings");
+    
+     for(input of inputs) {
+        input.addEventListener("change", editServing);
+     };
+
+    function editServing() {
+        let servingId = event.target.id;
+        let recipeName = servingId.substring(0, servingId.length - 8);
+        let servingSpanId = servingId + "Size";
+        let currentServing = parseFloat(document.getElementById(servingSpanId).innerHTML);
+        let newServing = parseFloat(document.getElementById(servingId).value);
+        let multiplier = newServing / currentServing;
+        currentServing = newServing;
+        let listName = "#" + recipeName + "list span";
+        let spanAmounts = document.querySelectorAll(listName);
+        
+        for (y=0; y<recipes.length; y++) {
+            
+            if(recipes[y].name.replace(/\s/g, '') == recipeName) {
+                for(x=0; x<recipes[y].ingredientAmount.length; x++) {
+                    for(i=0; i<spanAmounts.length; i++) {
+                        let newAmts = recipes[y].ingredientAmount[i] * multiplier;
+                        spanAmounts[i].innerHTML = (newAmts.toFixed(1));
+                    };
+                };
+            };
+            };
+    };
 };
