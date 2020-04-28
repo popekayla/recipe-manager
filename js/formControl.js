@@ -114,7 +114,7 @@ function onLoad() {
         /*Checks validation
           If inputs are empty or any has a class of 'validationFailure', error message is displayed and submission fails*/
         let inputs = document.querySelectorAll("input");
-        
+        var validation = false;
         for(i=0; i<inputs.length; i++) {
 
             if(inputs[i].classList.contains("validationFailure") || inputs[i].value == "") {
@@ -122,7 +122,11 @@ function onLoad() {
                 event.preventDefault();
                 return false;
             } else {
-                
+                validation = true;
+            }
+        };
+        
+            if(validation) {
                 /*Blank object with blank arrays for input values to be added to*/
                 var recipe = {
                     ingredientAmount: [],
@@ -168,14 +172,21 @@ function onLoad() {
 
                 /*Gets current recipe Json object from local storage and pushes new recipe into the array
                 Sets it as an object with a new name*/
-                recipes = [];
-                recipes = JSON.parse(localStorage.getItem('recipesJson')) || [];
+                let recipes = [];
+                let newRecipeObject = localStorage.getItem("newRecipesJson");
+                let recipesJson = localStorage.getItem("recipesJson");
+                if (newRecipeObject) {
+                    recipes = JSON.parse(newRecipeObject);
+                } else {
+                    recipes = JSON.parse(recipesJson);
+                }
+                //recipes = JSON.parse(localStorage.getItem('recipesJson')) || [];
                 recipes.push(recipe);
-                console.log(recipes);
+                //console.log(recipes);
                 json = JSON.stringify(recipes);
                 localStorage.setItem("newRecipesJson", json);
             };
-    }};
+    };
 }
 
 
