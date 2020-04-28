@@ -1,0 +1,102 @@
+<html>
+
+    <head>
+
+        <title>Recipe Submission</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="css/formStyle.css">
+
+        <script src="js/formControl.js"></script>
+        <script src="js/validationFunctions.js"></script>
+
+    </head>
+
+    <body onLoad="onLoad(), validations()">
+
+        
+
+        <header>
+            <h1>Recipe Manager</h1>
+            <a href="index.html">Back to Recipes</a>
+        </header>
+
+        <div id="container">
+
+            <form id="addRecipe" action="success.html" method="POST">
+
+                <h2>Add A Recipe</h2>
+
+                <h3>Recipe Info:</h3>
+                    <div class="formSection">
+                        <p><label for="name">Name:</label>
+                            <input type="text" name="name" id="name"></p>
+                        <p class="validation"><span id="nameValidation">&nbsp;</span></p>
+                        <p><label for="servings">Servings:</label>
+                            <input type="number" name="servings" id="servings" min="1"></p>
+                            <p class="validation"><span id="servingValidation">&nbsp;</span></p>
+                        <p><label for="img">Upload Image:</label>
+                            <input type="file" id="img" name="img" accept="image/*"> 
+                        </p>
+                        <p><label for="prep">Prep Time:</label>
+                            <input type="number" name="prepTime" id="prep" min="0" max="60">
+                            <select id="prepTimeType" name="prep">
+                                <option>Please Select</option>
+                                <option value="minutes">Minutes</option>
+                                <option value="hours">Hours</option>
+                            </select></p>
+                            <p class="validation"><span id="prepValidation">&nbsp;</span></p>
+                        <p><label for="cook">Cook Time:</label>
+                            <input type="number" name="cookTime" id="cook" min="0" max="60">
+                            <select id="cookTimeType" name="cook">
+                                <option>Please Select</option>
+                                <option value="minutes">Minutes</option>
+                                <option value="hours">Hours</option>
+                            </select>
+                        </p>
+                        <p class="validation"><span id="cookValidation">&nbsp;</span></p>
+                        <p><label for="difficulty">Difficulty:</label>
+                            <select id="difficulty" name="difficulty">
+                                <option>Please Select</option>
+                                <option value="Easy">Easy</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Hard">Hard</option>
+                            </select>
+                        </p>
+                        <p class="validation"><span id="difficultyValidation">&nbsp;</span></p>
+                    </div>
+
+                <h3>Ingredients:</h3>
+                    <div class="formSection">
+                            <ul id="ingredientList">
+                                <li>
+                                    <label for="ingredients">Amt:</label> <input type="number" step="any" name="ingredientAmt1" id="ingredientAmt1" min="0" class="amt">
+                                    <label for="ingredientName">Ingredient:</label> <input type="text" name="ingredientName1" id="ingredientName1" class="ingredient">
+                                </li>
+                            </ul>
+                            <p class="validation"><span id="ingredientValidation">&nbsp;</span></p>
+                            <button type="button" id="ingredients">Add +</button>
+                    </div>
+                    
+                <h3>Instructions:</h3>
+                    <div class="formSection">
+                            <ol id="instructionList">
+                                <li>
+                                    <input type="text" name="instruction1" id="instruction1" class="instruction">
+                                </li>
+                            </ol>
+                            <p class="validation"><span id="instructionValidation">&nbsp;</span></p>
+                            <button type="button" id="instructions">Add +</button>
+                    </div>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+
+            </form>
+
+
+        </div>
+
+    </body>
+
+</html>

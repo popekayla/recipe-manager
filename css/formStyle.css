@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #faf5f9; }
+
+#container {
+  width: 80%;
+  margin: 2em auto; }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 2em auto;
+    padding: 0.3em;
+    text-align: center;
+    border-bottom: 1px solid #000022; }
+
+    header a {
+        align-self: center;
+        color: #000022;
+        text-decoration: none;
+        padding: 0.5em;
+        box-shadow: 0px 1px 5px rgba(0, 0, 34, 0.3);
+        border-radius: 10px;
+        font-size: 1.7em;
+        transition: box-shadow 0.3s;
+      }
+      
+      header a:hover {
+          box-shadow: 1px 1px 7px;
+      }
+    
+
+h1 {
+  font-size: 2.3em;
+  color: #000022; }
+
+h2 {
+  text-align: center;
+  margin-bottom: 1em; }
+
+h2, h3 {
+  color: #E28413; }
+
+.validationSuccess {
+  box-shadow: 0px 0px 5px rgba(0, 100, 0, 0.9);
+  border-color: green; }
+
+.validationFailure {
+  box-shadow: 0px 0px 5px rgba(100, 0, 0, 0.9);
+  border-color: red; }
+
+form {
+  width: 60%;
+  margin: 2em auto; }
+  form .formSection {
+    margin: 1em 0.5em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #000022; }
+  form p {
+    margin: 1em 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    column-gap: 0.5em;
+    align-items: center; }
+  form li {
+    margin: 1em 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 6fr;
+    column-gap: 0.5em;
+    align-items: center; }
+  form input, form select {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid rgba(0, 0, 34, 0.5); }
+  form input:focus, form select:focus {
+    box-shadow: 0px 0px 5px rgba(0, 0, 34, 0.8);
+    outline: none; }
+  form input[type=file] {
+    border: none; }
+  form .validation {
+    grid-column: 2 / span 3;
+    color: red; }
+  form input[type=number] {
+    width: 100%; }
+  form #name, form #difficulty, form #img {
+    grid-column: 2 / span 2; }
+  form label[for="ingredientName"] {
+    justify-self: center; }
+  form .instruction {
+    grid-column: 1 / span 4; }
+  form ul {
+    list-style: none; }
+  form button {
+    padding: 0.8em;
+    border: none;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 34, 0.5);
+    border-radius: 5px;
+    transition: box-shadow 0.3s; }
+  form button:hover {
+    box-shadow: 0px 0px 5px rgba(0, 0, 34, 0.8); }
+
+/*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width: 800px) {
+  form { width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding-bottom: 1em;
+    display: block;
+    text-align: left;
+  }
+
+  header a {
+    font-size: 1em;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  form p {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0.5em;
+  }
+
+  form #name, form #difficulty, form #img {
+    grid-column: 1 / span 1; }
+
+  form .validation {
+    grid-column: 1 / span 1;
+    grid-template-rows: 1fr; }
+
+  form li {
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 0.5em; 
+  }
+
+  form #instructionList li {
+    grid-template-rows: 1fr;
+  }
+
+  form input[type=number] {
+    width: 50%;
+  }
+}

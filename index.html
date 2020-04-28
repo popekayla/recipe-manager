@@ -1,0 +1,243 @@
+<html>
+
+    <head>
+    
+        <title>Recipe Manager</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <script src="js/recipeFunctions.js"></script>
+        <script src="js/recipeObject.js"></script>
+        <script src="js/recipeDisplay.js"></script>
+    
+    </head>
+    
+    <body onLoad="onLoad(), recipeFunctions()">
+        <header>
+            <h1>Recipe Manager</h1>
+            <a href="addRecipe.html">Add a Recipe</a>
+        </header>
+        <div id="container">
+         
+    
+            <!--<section id="chili">
+
+                <h2>Crockpot Chili</h2>
+
+                    <div class="flex">
+                        
+                        <img src="images/chili.jpg">
+                        <div class="recipeInfo">
+                            <h3>Recipe Info</h3>
+                                <p><strong>Servings:</strong> 6</p>
+                                <p><strong>Prep Time:</strong> 25 mins</p>
+                                <p><strong>Cook Time:</strong> 6 hours</p>
+                                <p><strong>Difficulty:</strong> Easy</p>
+                        </div>
+                        
+                    </div>
+                    
+                        <div id="chiliIngredients" class="invisible">
+                        
+                            <h3>Ingredients:</h3>
+                            
+                                <p>
+                                   Servings:
+                                    <form name="chiliServingsForm">
+                                        <input type="radio" name="chiliServings" id="half" value="0.5">Half
+                                        <input type="radio" name="chiliServings" id="normal" value="1">Normal
+                                        <input type="radio" name="chiliServings" id="double" value="2">Double
+                                    </form>
+                                </p>
+                            
+                                <ul id="chiliAmounts">
+
+                                    <li><span>2</span> tbsp. cooking oil</li>
+                                    <li><span>1</span> cup onion</li>
+                                    <li><span>1</span> cup chopped peppers</li>
+                                    <li><span>1</span> tbsp. Chili powder</li>
+                                    <li><span>1</span> tsp. Hot chili powder (optional)</li>
+                                    <li><span>1</span> lb ground beef or chicken</li>
+                                    <li><span>2</span> cans Red Beans</li>
+                                    <li><span>2</span> cans Kidney Beans</li>
+                                    <li><span>2</span> cans Tomato Puree</li>
+                                    <li><span>2</span> cans Tomato Sauce</li>
+                                    <li><span>1</span> cup shredded cheese (optional)</li>
+                                    <li><span>0.5</span> cup sour cream (optional)</li>
+                                    
+                              </ul>
+                
+                        </div>
+                        
+                        <p><button id="hideChiliIngredients">Show/Hide Ingredients</button></p>
+                
+                        <div id="chiliInstructions" class="invisible">
+                
+                            <h3>Instructions:</h3>
+                            
+                                <ol>
+                                    <li>Heat cooking oil in 2 quart skillet.</li>
+                                    <li>Saute onions and peppers for 5 minutes.</li>
+                                    <li>Add spices and stir for 30 seconds.</li>
+                                    <li>Add meat and cook until browned. Approximately 15 minutes.</li>
+                                    <li>Pour contents of skillet into 3 quart crock pot.</li>
+                                    <li>Rinse beans and place in crockpot.</li>
+                                    <li>Open and pour Tomato puree and sauce into crock pot.</li>
+                                    <li>Cover crockpot and cook on low for 6 hours.</li>
+                                    <li>Serve into individual bowls and top with sour cream and cheese.</li>
+                                </ol>
+                            
+                        </div>
+            
+                        <p><button id="hideChiliInstructions">Show/Hide Instructions</button></p>
+
+            </section>
+            
+             <section id="frenchToast">
+
+                <h2>Blueberry Banana French Toast</h2>
+
+                    <div class="flex">
+                        
+                        <img src="images/frenchToast.jpg">
+                        <div class="recipeInfo">
+                            <h3>Recipe Info</h3>
+                                <p><strong>Servings:</strong> 8</p>
+                                <p><strong>Prep Time:</strong> 10 mins</p>
+                                <p><strong>Cook Time:</strong> 15 mins</p>
+                                <p><strong>Difficulty:</strong> Easy</p>
+                        </div>
+                        
+                    </div>
+                    
+                        <div id="frenchToastIngredients" class="invisible">
+                        
+                            <h3>Ingredients:</h3>
+                            
+                                <p>
+                                   Servings:
+                                    <form name="frenchToastServingsForm">
+                                        <input type="radio" name="frenchToastServings" id="half" value="0.5">Half
+                                        <input type="radio" name="frenchToastServings" id="normal" value="1">Normal
+                                        <input type="radio" name="frenchToastServings" id="double" value="2">Double
+                                    </form>
+                                </p>
+                            
+                                <ul id="frenchToastAmounts">
+
+                                    <li><span>2</span> ripe bananas</li>
+                                    <li><span>0.5</span> cup fresh blueberries</li>
+                                    <li><span>1</span> cup chopped peppers</li>
+                                    <li><span>1</span> tsp. vanilla</li>
+                                    <li><span>0.75</span> cup unsweetened vanilla almond milk</li>
+                                    <li><span>3</span> tblsp. butter</li>
+                                    <li><span>8</span> slices of bread</li>
+                                   
+                               </ul>
+                 
+                                <b>Optional Toppings</b>
+                 
+                                    <ul>
+                                        <li>Maple Syrup</li>
+                                        <li>Blueberry Syrup</li>
+                                        <li>Cinnamon</li>
+                                        <li>More Blueberries and Banana slices</li>
+                                    </ul>
+                
+                        </div>
+                        
+                        <p><button id="hideFrenchToastIngredients">Show/Hide Ingredients</button></p>
+                
+                        <div id="frenchToastInstructions" class="invisible">
+                
+                            <h3>Instructions:</h3>
+                            
+                                <ol>
+                                   <li>Blend up the bananas, vanilla, and almond milk (add sugar if you choose to), and blend until smooth.</li>
+                                    <li>Add blueberries into the blended mixture and pulse until broken up.</li>
+                                    <li>Pour the mixture into a large bowl for dipping.</li>
+                                    <li>Put a little bit of butter in a skillet and let it heat up on high heat, melting the butter.</li>
+                                    <li>Dip your toast into the batter and place on the hot skillet. Cook 2-4 minutes on each side of the toast until brown.</li>
+                                    <li>Plate and top with topping of your choice.</li>
+                                </ol>
+                            
+                        </div>
+            
+                        <p><button id="hideFrenchToastInstructions">Show/Hide Instructions</button></p>
+
+            </section>
+            
+            <section id="salsa">
+
+                <h2>Mango Black Bean Salsa</h2>
+
+                    <div class="flex">
+                        
+                        <img src="images/salsa.jpg">
+                        <div class="recipeInfo">
+                            <h3>Recipe Info</h3>
+                                <p><strong>Servings:</strong> 6</p>
+                                <p><strong>Prep Time:</strong> 15 mins</p>
+                                <p><strong>Cook Time:</strong> 0 mins</p>
+                                <p><strong>Difficulty:</strong> Easy</p>
+                        </div>
+                        
+                    </div>
+                    
+                        <div id="salsaIngredients" class="invisible">
+                        
+                            <h3>Ingredients:</h3>
+                            
+                                <p>
+                                   Servings:
+                                    <form name="salsaServingsForm">
+                                        <input type="radio" name="salsaServings" id="half" value="0.5">Half
+                                        <input type="radio" name="salsaServings" id="normal" value="1">Normal
+                                        <input type="radio" name="salsaServings" id="double" value="2">Double
+                                    </form>
+                                </p>
+                            
+                                <ul id="salsaAmounts">
+
+                                    <li><span>2</span> medium mangoes</li>
+                                    <li><span>1</span> large tomato, chopped</li>
+                                    <li><span>1</span> large bell pepper, chopped</li>
+                                    <li><span>1</span> cup corn</li>
+                                    <li><span>15</span> oz can black beans, drained and rinsed</li>
+                                    <li><span>0.5</span> cups cilantro, chopped</li>
+                                    <li><span>2</span> tbsp. red onion, minced</li>
+                                    <li><span>2</span> tbsp. olive oil</li>
+                                    <li><span>1</span> lime, juiced</li>
+                                    <li><span>2</span> tsp. ground cumin</li>
+                                    <li><span>0.5</span> tsp salt</li>
+                                    <li>red pepper flakes, to taste</li>
+                                    
+                              </ul>
+                
+                        </div>
+                        
+                        <p><button id="hideSalsaIngredients">Show/Hide Ingredients</button></p>
+                
+                        <div id="salsaInstructions" class="invisible">
+                
+                            <h3>Instructions:</h3>
+                            
+                                <ol>
+                                    <li>In a large bowl, add mango, tomato, bell pepper, corn, black beans, cilantro, onion, olive oil, lime juice, cumin, salt, hot pepper flakes.</li>
+                                    <li>Gently stir to combine. If you have time, allow flavors to marry each other in the fridge for a few hours.</li>
+                                    <li>Serve cold with cilantro lime chicken, grilled salmon or add cooked quinoa to make it one complete meal.</li>
+                                </ol>
+                            
+                        </div>
+            
+                        <p><button id="hideSalsaInstructions">Show/Hide Instructions</button></p>
+
+            </section>
+            
+        </div>End Container--> 
+    
+    </body>
+
+</html>

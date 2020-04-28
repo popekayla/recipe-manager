@@ -1,0 +1,129 @@
+$primaryColor: #000022;
+$secondaryColor: #E28413;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #faf5f9;
+}
+
+#container {
+    width: 80%;
+    margin: 2em auto;
+}
+
+header {
+    margin-bottom: 2em;
+    padding: 0.3em;
+    text-align: center;
+    border-bottom: 1px solid $primaryColor;
+}
+
+h1 {
+    color: $primaryColor;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h2, h3 {
+    color: $secondaryColor;
+}
+
+.validationSuccess {
+    box-shadow: 0px 0px 5px rgba(0, 100, 0, 0.9);
+    border-color: green;
+}
+
+.validationFailure {
+    box-shadow: 0px 0px 5px rgba(100, 0, 0, 0.9);
+    border-color: red;
+}
+
+form {
+    width: 60%;
+    margin: 2em auto;
+
+    .formSection {
+        margin: 1em 0.5em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid $primaryColor;
+    }
+
+    p {
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 3fr;
+        column-gap: 0.5em;
+        align-items: center;
+    }
+
+    li {
+        margin: 1em 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr 6fr;
+        column-gap: 0.5em;
+        align-items: center;
+    }
+
+    input, select {
+        width: 100%;
+        padding:0.8em;
+        border: 1px solid rgba(0, 0, 34, 0.5);
+    }
+
+    input:focus, select:focus {
+       box-shadow: 0px 0px 5px rgba(0, 0, 34, 0.8);
+      // border: none;
+       outline: none;
+    }
+
+    input[type=file] {
+        border:none;
+    }
+
+    .validation {
+        grid-column: 2 / span 3;
+        color: red;
+    }
+
+    input[type=number] {
+        width: 100%;
+    }
+
+    #name, #difficulty, #img {
+        grid-column: 2 / span 2;
+    }
+
+    label[for="ingredientName"] {
+        justify-self: center;
+    }
+
+    .instruction {
+        grid-column: 1 / span 4;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    button {
+        padding: 0.8em;
+        border: none;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 34, 0.5);
+        border-radius: 5px;
+        transition: box-shadow 0.3s;
+    }
+
+    button:hover {
+        box-shadow: 0px 0px 5px rgba(0, 0, 34, 0.8);
+    }
+
+}
